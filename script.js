@@ -1,94 +1,19 @@
 /* ====================================
-   MOHIT SHARMA - PREMIUM PORTFOLIO
+   MOHIT SHARMA — SYNTHETIC ARCHITECT
    JavaScript Interactions & Animations
    ==================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize all modules
-    initCustomCursor();
     initNavbar();
     initMobileMenu();
     initScrollAnimations();
-    initSkillBars();
+    initHeroAnimations();
+    initCounterAnimation();
     initContactForm();
     initSmoothScroll();
-    initHeroAnimations();
 });
 
-/* ====================================
-   CUSTOM CURSOR
-   ==================================== */
-function initCustomCursor() {
-    const cursorFollower = document.querySelector('.cursor-follower');
-    const cursorDot = document.querySelector('.cursor-dot');
-    
-    if (!cursorFollower || !cursorDot) return;
-    
-    // Check for touch device
-    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-        return;
-    }
-    
-    let mouseX = 0;
-    let mouseY = 0;
-    let followerX = 0;
-    let followerY = 0;
-    
-    // Track mouse position
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        
-        // Activate cursors once mouse moves
-        cursorFollower.classList.add('active');
-        cursorDot.classList.add('active');
-        
-        // Update dot position immediately
-        cursorDot.style.left = mouseX + 'px';
-        cursorDot.style.top = mouseY + 'px';
-    });
-    
-    // Smooth follower animation
-    function animateCursor() {
-        // Ease the follower towards mouse position
-        const dx = mouseX - followerX;
-        const dy = mouseY - followerY;
-        
-        followerX += dx * 0.15;
-        followerY += dy * 0.15;
-        
-        cursorFollower.style.left = followerX + 'px';
-        cursorFollower.style.top = followerY + 'px';
-        
-        requestAnimationFrame(animateCursor);
-    }
-    
-    animateCursor();
-    
-    // Add hover effect for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .project-card, .bento-card, .timeline-item, input, textarea');
-    
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursorFollower.classList.add('hover');
-        });
-        
-        el.addEventListener('mouseleave', () => {
-            cursorFollower.classList.remove('hover');
-        });
-    });
-    
-    // Hide cursor when leaving window
-    document.addEventListener('mouseleave', () => {
-        cursorFollower.classList.remove('active');
-        cursorDot.classList.remove('active');
-    });
-    
-    document.addEventListener('mouseenter', () => {
-        cursorFollower.classList.add('active');
-        cursorDot.classList.add('active');
-    });
-}
+
 
 /* ====================================
    NAVBAR
@@ -97,49 +22,36 @@ function initNavbar() {
     const navbar = document.getElementById('navbar');
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section[id]');
-    
+
     if (!navbar) return;
-    
-    // Scroll effect
-    let lastScroll = 0;
-    
+
     window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        // Add/remove scrolled class
-        if (currentScroll > 50) {
+        if (window.pageYOffset > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-        
-        // Update active nav link based on scroll position
         updateActiveNavLink();
-        
-        lastScroll = currentScroll;
-    });
-    
-    // Update active nav link
+    }, { passive: true });
+
     function updateActiveNavLink() {
-        const scrollPosition = window.scrollY + 200;
-        
+        const scrollPos = window.scrollY + 200;
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            const id = section.getAttribute('id');
+
+            if (scrollPos >= top && scrollPos < top + height) {
                 navLinks.forEach(link => {
                     link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
+                    if (link.getAttribute('href') === `#${id}`) {
                         link.classList.add('active');
                     }
                 });
             }
         });
     }
-    
-    // Initial check
+
     updateActiveNavLink();
 }
 
@@ -147,30 +59,28 @@ function initNavbar() {
    MOBILE MENU
    ==================================== */
 function initMobileMenu() {
-    const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
-    const navLinkItems = document.querySelectorAll('.nav-links a');
-    
-    if (!navToggle || !navLinks) return;
-    
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    if (!toggle || !links) return;
+
+    toggle.addEventListener('click', () => {
+        toggle.classList.toggle('active');
+        links.classList.toggle('active');
     });
-    
-    // Close menu when clicking a link
-    navLinkItems.forEach(link => {
+
+    navItems.forEach(link => {
         link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navLinks.classList.remove('active');
+            toggle.classList.remove('active');
+            links.classList.remove('active');
         });
     });
-    
-    // Close menu when clicking outside
+
     document.addEventListener('click', (e) => {
-        if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
-            navToggle.classList.remove('active');
-            navLinks.classList.remove('active');
+        if (!toggle.contains(e.target) && !links.contains(e.target)) {
+            toggle.classList.remove('active');
+            links.classList.remove('active');
         }
     });
 }
@@ -179,27 +89,22 @@ function initMobileMenu() {
    SCROLL ANIMATIONS
    ==================================== */
 function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.fade-in-up:not(.hero .fade-in-up)');
-    
-    if (!animatedElements.length) return;
-    
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -100px 0px',
-        threshold: 0.1
-    };
-    
+    const elements = document.querySelectorAll('.fade-in-up:not(.hero .fade-in-up)');
+    if (!elements.length) return;
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optionally unobserve after animation
-                // observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
-    
-    animatedElements.forEach(el => observer.observe(el));
+    }, {
+        root: null,
+        rootMargin: '0px 0px -80px 0px',
+        threshold: 0.1
+    });
+
+    elements.forEach(el => observer.observe(el));
 }
 
 /* ====================================
@@ -207,43 +112,56 @@ function initScrollAnimations() {
    ==================================== */
 function initHeroAnimations() {
     const heroElements = document.querySelectorAll('.hero .fade-in-up');
-    
-    // Delay to ensure page is fully loaded
+
     setTimeout(() => {
-        heroElements.forEach((el, index) => {
-            setTimeout(() => {
-                el.classList.add('visible');
-            }, index * 150);
+        heroElements.forEach((el, i) => {
+            setTimeout(() => el.classList.add('visible'), i * 120);
         });
-    }, 100);
+    }, 200);
 }
 
 /* ====================================
-   SKILL BARS ANIMATION
+   COUNTER ANIMATION
    ==================================== */
-function initSkillBars() {
-    const skillBars = document.querySelectorAll('.skill-progress');
-    
-    if (!skillBars.length) return;
-    
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5
-    };
-    
+function initCounterAnimation() {
+    const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+    if (!statNumbers.length) return;
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const progress = entry.target.getAttribute('data-progress');
-                entry.target.style.setProperty('--progress', progress + '%');
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-target'));
+                animateValue(el, 0, target, 2000);
+                observer.unobserve(el);
             }
         });
-    }, observerOptions);
-    
-    skillBars.forEach(bar => observer.observe(bar));
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(num => observer.observe(num));
+
+    function animateValue(el, start, end, duration) {
+        const startTime = performance.now();
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Ease out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(eased * (end - start) + start);
+
+            el.textContent = current;
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                el.textContent = end;
+            }
+        }
+
+        requestAnimationFrame(update);
+    }
 }
 
 /* ====================================
@@ -251,25 +169,19 @@ function initSkillBars() {
    ==================================== */
 function initContactForm() {
     const form = document.getElementById('contact-form');
-    
     if (!form) return;
-    
+
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         const submitBtn = form.querySelector('.btn-submit');
         const originalContent = submitBtn.innerHTML;
-        
-        // Get form data
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
-        
-        // Validate form
-        if (!validateForm(data)) {
-            return;
-        }
-        
-        // Show loading state
+
+        if (!validateForm(data)) return;
+
+        // Loading state
         submitBtn.innerHTML = `
             <span>Sending...</span>
             <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -280,109 +192,88 @@ function initContactForm() {
             </svg>
         `;
         submitBtn.disabled = true;
-        
-        // Simulate form submission (replace with actual API call)
+
         await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        // Show success state
+
+        // Success state
         submitBtn.innerHTML = `
             <span>Message Sent!</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="20 6 9 17 4 12"/>
             </svg>
         `;
-        submitBtn.style.background = 'linear-gradient(135deg, #00F5FF, #00D4AA)';
-        
-        // Reset form
+        submitBtn.style.background = 'linear-gradient(135deg, #00f0ff, #00D4AA)';
+
         form.reset();
-        
-        // Reset button after delay
+
         setTimeout(() => {
             submitBtn.innerHTML = originalContent;
             submitBtn.disabled = false;
             submitBtn.style.background = '';
         }, 3000);
     });
-    
+
     function validateForm(data) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        
+
         if (!data.name || data.name.trim().length < 2) {
-            showFormError('Please enter a valid name');
+            showNotification('Please enter a valid name', 'error');
             return false;
         }
-        
         if (!data.email || !emailRegex.test(data.email)) {
-            showFormError('Please enter a valid email address');
+            showNotification('Please enter a valid email', 'error');
             return false;
         }
-        
         if (!data.subject || data.subject.trim().length < 3) {
-            showFormError('Please enter a subject');
+            showNotification('Please enter a subject', 'error');
             return false;
         }
-        
         if (!data.message || data.message.trim().length < 10) {
-            showFormError('Please enter a message (at least 10 characters)');
+            showNotification('Message must be at least 10 characters', 'error');
             return false;
         }
-        
         return true;
     }
-    
-    function showFormError(message) {
-        // Create error notification
+
+    function showNotification(message, type = 'info') {
         const notification = document.createElement('div');
-        notification.className = 'form-notification error';
-        notification.innerHTML = `
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="15" y1="9" x2="9" y2="15"/>
-                <line x1="9" y1="9" x2="15" y2="15"/>
-            </svg>
-            <span>${message}</span>
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            padding: 16px 24px;
+            background: ${type === 'error' ? 'rgba(255, 50, 50, 0.9)' : 'rgba(0, 240, 255, 0.9)'};
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            color: ${type === 'error' ? 'white' : '#002022'};
+            font-size: 0.9rem;
+            font-weight: 500;
+            z-index: 10000;
+            animation: slideNotifIn 0.3s ease-out;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         `;
-        
-        // Add styles
-        Object.assign(notification.style, {
-            position: 'fixed',
-            bottom: '20px',
-            right: '20px',
-            padding: '16px 24px',
-            background: 'rgba(255, 50, 50, 0.9)',
-            backdropFilter: 'blur(10px)',
-            borderRadius: '12px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '12px',
-            color: 'white',
-            fontSize: '0.9rem',
-            zIndex: '10000',
-            animation: 'slideIn 0.3s ease-out'
-        });
-        
-        // Add animation keyframes
-        if (!document.querySelector('#notification-styles')) {
+        notification.textContent = message;
+
+        if (!document.querySelector('#notif-styles')) {
             const style = document.createElement('style');
-            style.id = 'notification-styles';
+            style.id = 'notif-styles';
             style.textContent = `
-                @keyframes slideIn {
+                @keyframes slideNotifIn {
                     from { transform: translateX(100%); opacity: 0; }
                     to { transform: translateX(0); opacity: 1; }
                 }
-                @keyframes slideOut {
+                @keyframes slideNotifOut {
                     from { transform: translateX(0); opacity: 1; }
                     to { transform: translateX(100%); opacity: 0; }
                 }
             `;
             document.head.appendChild(style);
         }
-        
+
         document.body.appendChild(notification);
-        
-        // Remove after delay
+
         setTimeout(() => {
-            notification.style.animation = 'slideOut 0.3s ease-out forwards';
+            notification.style.animation = 'slideNotifOut 0.3s ease-out forwards';
             setTimeout(() => notification.remove(), 300);
         }, 3000);
     }
@@ -392,24 +283,20 @@ function initContactForm() {
    SMOOTH SCROLL
    ==================================== */
 function initSmoothScroll() {
-    const links = document.querySelectorAll('a[href^="#"]');
-    
-    links.forEach(link => {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
-            
             if (href === '#') return;
-            
+
             e.preventDefault();
-            
             const target = document.querySelector(href);
-            
+
             if (target) {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-                
+                const navHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
                 window.scrollTo({
-                    top: targetPosition,
+                    top: targetPos,
                     behavior: 'smooth'
                 });
             }
@@ -418,152 +305,14 @@ function initSmoothScroll() {
 }
 
 /* ====================================
-   TYPING EFFECT (BONUS)
-   ==================================== */
-function initTypingEffect(element, text, speed = 100) {
-    let index = 0;
-    
-    function type() {
-        if (index < text.length) {
-            element.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-/* ====================================
-   PARALLAX EFFECT (BONUS)
-   ==================================== */
-function initParallax() {
-    const parallaxElements = document.querySelectorAll('[data-parallax]');
-    
-    if (!parallaxElements.length) return;
-    
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        
-        parallaxElements.forEach(el => {
-            const speed = el.dataset.parallax || 0.5;
-            el.style.transform = `translateY(${scrolled * speed}px)`;
-        });
-    });
-}
-
-/* ====================================
-   TILT EFFECT FOR CARDS (BONUS)
-   ==================================== */
-function initTiltEffect() {
-    const cards = document.querySelectorAll('.project-card, .bento-card');
-    
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-        });
-    });
-}
-
-/* ====================================
-   COUNTER ANIMATION (BONUS)
-   ==================================== */
-function animateCounter(element, target, duration = 2000) {
-    const start = 0;
-    const increment = target / (duration / 16);
-    let current = start;
-    
-    function updateCounter() {
-        current += increment;
-        if (current < target) {
-            element.textContent = Math.floor(current) + '+';
-            requestAnimationFrame(updateCounter);
-        } else {
-            element.textContent = target + '+';
-        }
-    }
-    
-    updateCounter();
-}
-
-/* ====================================
-   LAZY LOADING IMAGES
-   ==================================== */
-function initLazyLoading() {
-    const images = document.querySelectorAll('img[data-src]');
-    
-    if (!images.length) return;
-    
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                observer.unobserve(img);
-            }
-        });
-    });
-    
-    images.forEach(img => imageObserver.observe(img));
-}
-
-/* ====================================
-   UTILITY: DEBOUNCE
-   ==================================== */
-function debounce(func, wait = 20) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-/* ====================================
-   UTILITY: THROTTLE
-   ==================================== */
-function throttle(func, limit = 100) {
-    let inThrottle;
-    return function executedFunction(...args) {
-        if (!inThrottle) {
-            func(...args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
-}
-
-/* ====================================
    PROGRESSIVE ENHANCEMENT
    ==================================== */
-
-// Check for reduced motion preference
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (prefersReducedMotion) {
-    // Disable animations for users who prefer reduced motion
     document.documentElement.style.setProperty('--transition-fast', '0.01ms');
-    document.documentElement.style.setProperty('--transition-medium', '0.01ms');
+    document.documentElement.style.setProperty('--transition-med', '0.01ms');
     document.documentElement.style.setProperty('--transition-slow', '0.01ms');
 }
 
-// Log successful initialization
-console.log('%c⚡ Portfolio Loaded Successfully', 'color: #00F5FF; font-size: 14px; font-weight: bold;');
+console.log('%c⚡ Synthetic Architect — Portfolio Loaded', 'color: #00f0ff; font-size: 14px; font-weight: bold;');

@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mohit Sharma - Full Stack Developer Portfolio">
-    <title>Mohit Sharma | Full Stack Developer</title>
+    <meta name="description" content="Mohit Sharma — Backend Architect & Full Stack Developer. Building scalable systems and elegant digital experiences.">
+    <title>Mohit Sharma | Backend Architect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor-follower"></div>
-    <div class="cursor-dot"></div>
-
     <!-- Animated Background -->
     <div class="animated-bg">
         <div class="grid-pulse"></div>
         <div class="gradient-orb gradient-orb-1"></div>
         <div class="gradient-orb gradient-orb-2"></div>
+        <div class="gradient-orb gradient-orb-3"></div>
     </div>
 
     <!-- Navigation -->
@@ -29,12 +26,20 @@
                 <span class="logo-bracket">&lt;</span>mohit.dev<span class="logo-bracket"> /&gt;</span>
             </a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <a href="Mohit_Sharma_Resume.pdf" class="btn btn-nav-cta" download>
+                <span>Resume</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+            </a>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -43,42 +48,90 @@
         </div>
     </nav>
 
+    <!-- Social Sidebar -->
+    <aside class="social-sidebar" id="social-sidebar">
+        <a href="https://github.com/sharma-mohit-2005" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/sharma-mohit-dev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+            </svg>
+            <span>LinkedIn</span>
+        </a>
+    </aside>
+
     <main>
         <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="hero-content">
-                <p class="hero-subtitle fade-in-up">// Hello World, I'm Mohit</p>
-                <h1 class="hero-title fade-in-up">
-                    I don't just write code.<br>
-                    <span class="gradient-text">I architect digital empires.</span>
-                </h1>
-                <p class="hero-description fade-in-up">
-                    Backend sorcerer turning caffeine into scalable systems. 
-                    I build the invisible engines that power the apps you can't live without.
-                </p>
-                <div class="hero-cta fade-in-up">
-                    <a href="#projects" class="btn btn-primary">
-                        <span>View My Work</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <span>Get In Touch</span>
-                    </a>
+                <div class="hero-left">
+                    <div class="hero-status fade-in-up">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Available for work</span>
+                    </div>
+                    <p class="hero-label fade-in-up">SYSTEMS ENGINEER & ARCHITECT</p>
+                    <h1 class="hero-title fade-in-up">
+                        I don't just write code.<br>
+                        <span class="gradient-text">I architect digital empires.</span>
+                    </h1>
+                    <p class="hero-description fade-in-up">
+                        Backend sorcerer turning caffeine into scalable systems. 
+                        I build the invisible engines that power the apps you can't live without.
+                    </p>
+                    <div class="hero-cta fade-in-up">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View My Work</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get In Touch</span>
+                        </a>
+                    </div>
+                    <div class="hero-stats fade-in-up">
+                        <div class="stat">
+                            <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Projects Built</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
+                            <span class="stat-label">Passion</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="hero-stats fade-in-up">
-                    <div class="stat">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">Projects Built</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">Technologies</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Passion</span>
+                <div class="hero-right fade-in-up">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="terminal-title">mohit@architect ~ </span>
+                        </div>
+                        <div class="terminal-body">
+                            <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-key">name</span>: <span class="code-string">"Mohit Sharma"</span>,
+  <span class="code-key">role</span>: <span class="code-string">"Backend Architect"</span>,
+  <span class="code-key">passion</span>: <span class="code-string">"Building Scalable Systems"</span>,
+  <span class="code-key">tools</span>: [<span class="code-string">"Python"</span>, <span class="code-string">"Java"</span>, <span class="code-string">"Flask"</span>],
+  <span class="code-key">mindset</span>: <span class="code-string">"Systems Thinking"</span>
+};
+
+<span class="code-comment">// Initializing high-performance environment...</span>
+<span class="code-variable">System</span>.<span class="code-method">ready</span>() <span class="code-cursor">▊</span></code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,10 +159,6 @@
                                 <span>MS</span>
                             </div>
                         </div>
-                        <div class="image-decorations">
-                            <div class="decoration decoration-1"></div>
-                            <div class="decoration decoration-2"></div>
-                        </div>
                     </div>
                     <div class="about-text fade-in-up">
                         <h3>Hello, I'm Mohit Sharma</h3>
@@ -126,22 +175,22 @@
                             at the forefront of web development.
                         </p>
                         <div class="about-highlights">
-                            <div class="highlight">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <div class="highlight-chip">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                                     <polyline points="22 4 12 14.01 9 11.01"/>
                                 </svg>
                                 <span>Clean & Efficient Code</span>
                             </div>
-                            <div class="highlight">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <div class="highlight-chip">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                                     <polyline points="22 4 12 14.01 9 11.01"/>
                                 </svg>
                                 <span>Scalable Architecture</span>
                             </div>
-                            <div class="highlight">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <div class="highlight-chip">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                                     <polyline points="22 4 12 14.01 9 11.01"/>
                                 </svg>
@@ -162,555 +211,271 @@
         </section>
 
         <!-- Skills Section -->
-         <section class="skills" id="skills">
-<div class="container">
-
-<div class="section-header">
-<span class="section-tag">// Tech Stack</span>
-<h2 class="section-title fade-in-up">
-Skills & <br><span class="gradient-text">Expertise</span>
-</h2>
-</div>
-
-<div class="bento-grid">
-
-<!-- Programming -->
-<div class="bento-card bento-large fade-in-up">
-<div class="card-icon">
-<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/>
-</svg>
-</div>
-
-<h3>Programming</h3>
-
-<div class="tools-grid">
-<div class="tool-tag">Python</div>
-<div class="tool-tag">Java</div>
-<div class="tool-tag">JavaScript</div>
-</div>
-
-</div>
-
-
-<!-- Web Development -->
-<div class="bento-card fade-in-up">
-
-<div class="card-icon">
-<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-</svg>
-</div>
-
-<h3>Web Development</h3>
-
-<div class="tools-grid">
-<div class="tool-tag">HTML</div>
-<div class="tool-tag">CSS</div>
-<div class="tool-tag">Tailwind CSS</div>
-</div>
-
-</div>
-
-
-<!-- Backend -->
-<div class="bento-card fade-in-up">
-
-<div class="card-icon">
-<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<rect x="2" y="3" width="20" height="14" rx="2"/>
-<line x1="8" y1="21" x2="16" y2="21"/>
-</svg>
-</div>
-
-<h3>Backend</h3>
-
-<div class="tools-grid">
-<div class="tool-tag">Python Backend</div>
-<div class="tool-tag">Flask</div>
-<div class="tool-tag">Spring Boot</div>
-</div>
-
-</div>
-
-
-<!-- Databases -->
-<div class="bento-card fade-in-up">
-
-<div class="card-icon">
-<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<ellipse cx="12" cy="5" rx="9" ry="3"/>
-<path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
-</svg>
-</div>
-
-<h3>Databases</h3>
-
-<div class="tools-grid">
-<div class="tool-tag">MySQL</div>
-<div class="tool-tag">MongoDB</div>
-</div>
-
-</div>
-
-
-<!-- AI / Data Science -->
-<div class="bento-card fade-in-up">
-
-<div class="card-icon">
-<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<circle cx="12" cy="12" r="10"/>
-</svg>
-</div>
-
-<h3>AI / Data Science</h3>
-
-<div class="tools-grid">
-<div class="tool-tag">Pandas</div>
-<div class="tool-tag">NumPy</div>
-<div class="tool-tag">Scikit-Learn</div>
-<div class="tool-tag">NLP</div>
-</div>
-
-</div>
-
-
-<!-- Automation -->
-<div class="bento-card fade-in-up">
-
-<div class="card-icon">
-<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M12 2v20M2 12h20"/>
-</svg>
-</div>
-
-<h3>Automation</h3>
-
-<div class="tools-grid">
-<div class="tool-tag">n8n</div>
-<div class="tool-tag">Workflow Automation</div>
-<div class="tool-tag">REST APIs</div>
-<div class="tool-tag">Web Scraping</div>
-<div class="tool-tag">BeautifulSoup</div>
-</div>
-
-</div>
-
-<!-- Specialization -->
-<div class="bento-card bento-wide fade-in-up specialization-card">
-
-<div class="card-icon">
-<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<circle cx="12" cy="12" r="10"/>
-<path d="M8 12l2 2 4-4"/>
-</svg>
-</div>
-
-<h3>Specialization</h3>
-
-<div class="specialization-content">
-
-<h4>Automation Engineering</h4>
-
-<ul class="specialization-list">
-<li>n8n Workflow Automation</li>
-<li>API Integrations</li>
-<li>Data Pipelines</li>
-<li>Web Scraping Systems</li>
-</ul>
-
-</div>
-
-</div>
-<!-- Developer Tools -->
-<div class="bento-card bento-wide fade-in-up">
-
-<div class="card-icon">
-<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M14.7 6.3l1.6 1.6"/>
-</svg>
-</div>
-
-<h3>Developer Tools</h3>
-
-<div class="tools-grid">
-<div class="tool-tag">Git</div>
-<div class="tool-tag">GitHub</div>
-<div class="tool-tag">Docker</div>
-<div class="tool-tag">Linux</div>
-<div class="tool-tag">VS Code</div>
-</div>
-
-</div>
-
-
-</div>
-</div>
-</section>
-
-
-        <!-- <section class="skills" id="skills">
+        <section class="skills" id="skills">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header section-header-center">
                     <span class="section-tag">// Tech Stack</span>
-                    <h2 class="section-title fade-in-up">Skills &<br><span class="gradient-text">Expertise</span></h2>
+                    <h2 class="section-title fade-in-up">Skills & <span class="gradient-text">Expertise</span></h2>
+                    <p class="section-subtitle fade-in-up">The technical foundations that power my architectural decisions.</p>
                 </div>
-                <div class="bento-grid">
-                    <!-- Frontend -->
-                    <!-- <div class="bento-card bento-large fade-in-up" data-category="frontend">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/>
-                                <line x1="12" y1="22" x2="12" y2="15.5"/>
-                                <polyline points="22 8.5 12 15.5 2 8.5"/>
+
+                <div class="skills-micro-grid">
+                    <!-- Programming -->
+                    <div class="skill-module skill-module-wide fade-in-up">
+                        <div class="module-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"/>
+                                <polyline points="8 6 2 12 8 18"/>
                             </svg>
                         </div>
-                        <h3>Frontend Development</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>React.js</span>
-                                    <span>95%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="95"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info"> -->
-                                    <!-- <span>JavaScript</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="skill-bar"> -->
-                                    <!-- <div class="skill-progress" data-progress="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>TypeScript</span>
-                                    <span>85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>HTML/CSS</span>
-                                    <span>95%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="95"></div>
-                                </div>
-                            </div>
+                        <h3>Programming</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip">Java</span>
+                            <span class="skill-chip">JavaScript</span>
                         </div>
-                    </div> -->
+                    </div>
 
-                    <!-- Backend -->
-                    <!-- <div class="bento-card fade-in-up" data-category="backend">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <!-- Web Development -->
+                    <div class="skill-module fade-in-up">
+                        <div class="module-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
                                 <line x1="8" y1="21" x2="16" y2="21"/>
                                 <line x1="12" y1="17" x2="12" y2="21"/>
                             </svg>
                         </div>
-                        <h3>Backend</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Node.js</span>
-                                    <span>88%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="88"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Python</span>
-                                    <span>80%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="80"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Express.js</span>
-                                    <span>85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
+                        <h3>Web Development</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">HTML</span>
+                            <span class="skill-chip">CSS</span>
+                            <span class="skill-chip">Tailwind CSS</span>
                         </div>
-                    </div> -->
+                    </div>
 
-                    <!-- Database -->
-                    <!-- <div class="bento-card fade-in-up" data-category="database">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <!-- Backend -->
+                    <div class="skill-module fade-in-up">
+                        <div class="module-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                                <line x1="6" y1="6" x2="6.01" y2="6"/>
+                                <line x1="6" y1="18" x2="6.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <h3>Backend</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Python Backend</span>
+                            <span class="skill-chip">Flask</span>
+                            <span class="skill-chip">Spring Boot</span>
+                        </div>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="skill-module fade-in-up">
+                        <div class="module-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <ellipse cx="12" cy="5" rx="9" ry="3"/>
                                 <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
                                 <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
                             </svg>
                         </div>
-                        <h3>Database</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>MongoDB</span>
-                                    <span>85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>PostgreSQL</span>
-                                    <span>80%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="80"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>MySQL</span>
-                                    <span>78%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="78"></div>
-                                </div>
-                            </div>
+                        <h3>Databases</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">MySQL</span>
+                            <span class="skill-chip">MongoDB</span>
                         </div>
-                    </div> -->
+                    </div>
 
-                    <!-- Tools & DevOps
-                    <div class="bento-card bento-wide fade-in-up" data-category="tools">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <!-- AI / Data Science -->
+                    <div class="skill-module fade-in-up">
+                        <div class="module-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>AI / Data Science</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Pandas</span>
+                            <span class="skill-chip">NumPy</span>
+                            <span class="skill-chip">Scikit-Learn</span>
+                            <span class="skill-chip">NLP</span>
+                        </div>
+                    </div>
+
+                    <!-- Automation -->
+                    <div class="skill-module fade-in-up">
+                        <div class="module-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>Automation</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">n8n</span>
+                            <span class="skill-chip">Workflow Automation</span>
+                            <span class="skill-chip">REST APIs</span>
+                            <span class="skill-chip">Web Scraping</span>
+                            <span class="skill-chip">BeautifulSoup</span>
+                        </div>
+                    </div>
+
+                    <!-- Specialization -->
+                    <div class="skill-module skill-module-featured fade-in-up">
+                        <div class="module-icon module-icon-featured">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <h3>Specialization</h3>
+                        <h4>Automation Engineering</h4>
+                        <ul class="specialization-list">
+                            <li>n8n Workflow Automation</li>
+                            <li>API Integrations</li>
+                            <li>Data Pipelines</li>
+                            <li>Web Scraping Systems</li>
+                        </ul>
+                    </div>
+
+                    <!-- Developer Tools -->
+                    <div class="skill-module skill-module-wide fade-in-up">
+                        <div class="module-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
                             </svg>
                         </div>
-                        <h3>Tools & DevOps</h3>
-                        <div class="tools-grid">
-                            <div class="tool-tag">Git</div>
-                            <div class="tool-tag">Docker</div>
-                            <div class="tool-tag">AWS</div>
-                            <div class="tool-tag">CI/CD</div>
-                            <div class="tool-tag">Linux</div>
-                            <div class="tool-tag">REST APIs</div>
-                            <div class="tool-tag">GraphQL</div>
-                            <div class="tool-tag">Jest</div>
-                        </div>
-                    </div> -->
-
-                    <!-- Frameworks
-                    <div class="bento-card fade-in-up" data-category="frameworks">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
-                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
-                                <path d="M2 2l7.586 7.586"/>
-                                <circle cx="11" cy="11" r="2"/>
-                            </svg>
-                        </div>
-                        <h3>Frameworks</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Next.js</span>
-                                    <span>88%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="88"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Tailwind CSS</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
-                                </div>
-                            </div>
+                        <h3>Developer Tools</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Git</span>
+                            <span class="skill-chip">GitHub</span>
+                            <span class="skill-chip">Docker</span>
+                            <span class="skill-chip">Linux</span>
+                            <span class="skill-chip">VS Code</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
         <!-- Projects Section -->
         <section class="projects" id="projects">
             <div class="container">
                 <div class="section-header">
                     <span class="section-tag">// Portfolio</span>
-                    <h2 class="section-title fade-in-up">Featured<br><span class="gradient-text">Projects</span></h2>
+                    <h2 class="section-title fade-in-up">Featured <span class="gradient-text">Projects</span></h2>
                 </div>
                 <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <!-- Project 1 -->
-<article class="project-card fade-in-up">
-
-<div class="project-image">
-
-<img src="images/cv-analyzer.png" alt="CV Analyzer Project">
-
-<div class="project-overlay">
-<div class="project-links">
-
-<a href="#" class="project-link" aria-label="View Live">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-<polyline points="15 3 21 3 21 9"/>
-<line x1="10" y1="14" x2="21" y2="3"/>
-</svg>
-</a>
-
-<a href="https://github.com/sharma-mohit-2005/CV-Analyser-Project" target="_blank" class="project-link" aria-label="View Code">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-</svg>
-</a>
-
-</div>
-</div>
-
-</div>
-
-<div class="project-content">
-
-<div class="project-tags">
-<span>Python</span>
-<span>NLP</span>
-<span>Machine Learning</span>
-<span>Scikit-Learn</span>
-</div>
-
-<h3>AI CV Analyzer</h3>
-
-<p>
-A machine learning based resume analysis system that evaluates CVs using NLP techniques. 
-The project extracts relevant skills from resumes and compares them against job requirements 
-to help identify the best candidate match.
-</p>
-
-</div>
-
-</article>
+                    <!-- Project 1 - Large -->
+                    <article class="project-card project-card-large fade-in-up">
+                        <div class="project-image">
+                            <img src="images/cv-analyzer.png" alt="CV Analyzer Project">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="View Live">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                            <polyline points="15 3 21 3 21 9"/>
+                                            <line x1="10" y1="14" x2="21" y2="3"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://github.com/sharma-mohit-2005/CV-Analyser-Project" target="_blank" class="project-link" aria-label="View Code">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>NLP</span>
+                                <span>Machine Learning</span>
+                                <span>Scikit-Learn</span>
+                            </div>
+                            <h3>AI CV Analyzer</h3>
+                            <p>
+                                A machine learning based resume analysis system that evaluates CVs using NLP techniques. 
+                                Extracts relevant skills and compares them against job requirements 
+                                to identify the best candidate match.
+                            </p>
+                        </div>
+                    </article>
 
                     <!-- Project 2 -->
-<article class="project-card fade-in-up">
+                    <article class="project-card fade-in-up">
+                        <div class="project-image">
+                            <img src="images/cacheforge.png" alt="CacheForge Project">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="View Live">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                            <polyline points="15 3 21 3 21 9"/>
+                                            <line x1="10" y1="14" x2="21" y2="3"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://github.com/sharma-mohit-2005/CacheForge" target="_blank" class="project-link" aria-label="View Code">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>Java</span>
+                                <span>Data Structures</span>
+                                <span>Caching</span>
+                                <span>System Design</span>
+                            </div>
+                            <h3>CacheForge</h3>
+                            <p>High-performance caching system built in Java implementing efficient caching strategies and data structures for optimized data retrieval.</p>
+                        </div>
+                    </article>
 
-<div class="project-image">
-
-<img src="images/cacheforge.png" alt="CacheForge Project">
-
-<div class="project-overlay">
-<div class="project-links">
-
-<a href="#" class="project-link" aria-label="View Live">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-<polyline points="15 3 21 3 21 9"/>
-<line x1="10" y1="14" x2="21" y2="3"/>
-</svg>
-</a>
-
-<a href="https://github.com/sharma-mohit-2005/CacheForge" target="_blank" class="project-link" aria-label="View Code">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-</svg>
-</a>
-
-</div>
-</div>
-
-</div>
-
-<div class="project-content">
-
-<div class="project-tags">
-<span>Java</span>
-<span>Data Structures</span>
-<span>Caching</span>
-<span>System Design</span>
-</div>
-
-<h3>CacheForge</h3>
-
-<p>
-CacheForge is a high-performance caching system built in Java that implements 
-efficient caching strategies and data structures to optimize data retrieval 
-and reduce computation overhead in applications.
-</p>
-
-</div>
-
-</article>
-
-                   <!-- Project 3 -->
-<article class="project-card fade-in-up">
-
-<div class="project-image">
-
-<img src="images/broadcastx.png" alt="BroadCastX Project">
-
-<div class="project-overlay">
-<div class="project-links">
-
-<a href="#" class="project-link" aria-label="View Live">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-<polyline points="15 3 21 3 21 9"/>
-<line x1="10" y1="14" x2="21" y2="3"/>
-</svg>
-</a>
-
-<a href="https://github.com/sharma-mohit-2005/BroadCastX" target="_blank" class="project-link" aria-label="View Code">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-</svg>
-</a>
-
-</div>
-</div>
-
-</div>
-
-<div class="project-content">
-
-<div class="project-tags">
-<span>Python</span>
-<span>Automation</span>
-<span>APIs</span>
-<span>Messaging System</span>
-</div>
-
-<h3>BroadCastX</h3>
-
-<p>
-BroadCastX is an automated broadcasting system designed to send messages or notifications 
-to multiple recipients efficiently. The project focuses on automation workflows, 
-API integrations, and scalable message distribution.
-</p>
-
-</div>
-
-</article>
+                    <!-- Project 3 -->
+                    <article class="project-card fade-in-up">
+                        <div class="project-image">
+                            <img src="images/broadcastx.png" alt="BroadCastX Project">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="View Live">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                            <polyline points="15 3 21 3 21 9"/>
+                                            <line x1="10" y1="14" x2="21" y2="3"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://github.com/sharma-mohit-2005/BroadCastX" target="_blank" class="project-link" aria-label="View Code">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Automation</span>
+                                <span>APIs</span>
+                                <span>Messaging</span>
+                            </div>
+                            <h3>BroadCastX</h3>
+                            <p>Automated broadcasting system designed to send messages to multiple recipients efficiently via API integrations and scalable distribution.</p>
+                        </div>
+                    </article>
 
                     <!-- Project 4 -->
                     <article class="project-card fade-in-up">
                         <div class="project-image">
-                            <div class="project-placeholder">
+                            <div class="project-placeholder-img">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="2" y1="12" x2="22" y2="12"/>
-                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                                 </svg>
                             </div>
                             <div class="project-overlay">
@@ -736,7 +501,7 @@ API integrations, and scalable message distribution.
                                 <span>Express</span>
                                 <span>WebSocket</span>
                             </div>
-                            <h3>Real-time Chat Application</h3>
+                            <h3>Real-time Chat App</h3>
                             <p>A modern messaging platform with end-to-end encryption, file sharing, and video call integration for seamless communication.</p>
                         </div>
                     </article>
@@ -747,35 +512,38 @@ API integrations, and scalable message distribution.
         <!-- Contact Section -->
         <section class="contact" id="contact">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header section-header-center">
                     <span class="section-tag">// Get In Touch</span>
-                    <h2 class="section-title fade-in-up">Let's Work<br><span class="gradient-text">Together</span></h2>
+                    <h2 class="section-title fade-in-up">Let's Build <span class="gradient-text">Next</span>.</h2>
+                    <p class="section-subtitle fade-in-up">Currently open to opportunities in backend engineering, systems architecture, and automation projects.</p>
                 </div>
                 <div class="contact-content">
                     <div class="contact-info fade-in-up">
-                        <p class="contact-description">
-                            I'm always interested in hearing about new projects and opportunities. 
-                            Whether you have a question or just want to say hi, feel free to reach out!
-                        </p>
                         <div class="contact-details">
-                            <a href="mailto:msharma42005@gmail.com" class="contact-item">
+                            <a href="mailto:msharma42005@gmail.com" class="contact-item" id="contact-email">
                                 <div class="contact-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                         <polyline points="22,6 12,13 2,6"/>
                                     </svg>
                                 </div>
-                                <span>msharma42005@gmail.com</span>
+                                <div class="contact-text">
+                                    <span class="contact-label">Email</span>
+                                    <span class="contact-value">msharma42005@gmail.com</span>
+                                </div>
                             </a>
-                            <a href="tel:+919798366259" class="contact-item">
+                            <a href="tel:+919798366259" class="contact-item" id="contact-phone">
                                 <div class="contact-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                                     </svg>
                                 </div>
-                                <span>+91 9798366259</span>
+                                <div class="contact-text">
+                                    <span class="contact-label">Phone</span>
+                                    <span class="contact-value">+91 9798366259</span>
+                                </div>
                             </a>
-                            <a href="https://www.linkedin.com/in/sharma-mohit-dev/" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <a href="https://www.linkedin.com/in/sharma-mohit-dev/" target="_blank" rel="noopener noreferrer" class="contact-item" id="contact-linkedin">
                                 <div class="contact-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -783,15 +551,21 @@ API integrations, and scalable message distribution.
                                         <circle cx="4" cy="4" r="2"/>
                                     </svg>
                                 </div>
-                                <span>LinkedIn Profile</span>
+                                <div class="contact-text">
+                                    <span class="contact-label">LinkedIn</span>
+                                    <span class="contact-value">LinkedIn Profile</span>
+                                </div>
                             </a>
-                            <a href="https://github.com/sharma-mohit-2005" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <a href="https://github.com/sharma-mohit-2005" target="_blank" rel="noopener noreferrer" class="contact-item" id="contact-github">
                                 <div class="contact-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
                                     </svg>
                                 </div>
-                                <span>GitHub Profile</span>
+                                <div class="contact-text">
+                                    <span class="contact-label">GitHub</span>
+                                    <span class="contact-value">GitHub Profile</span>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -816,7 +590,7 @@ API integrations, and scalable message distribution.
                             <label for="message">Your Message</label>
                             <span class="focus-line"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-submit">
+                        <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
                             <span>Send Message</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <line x1="22" y1="2" x2="11" y2="13"/>
@@ -847,20 +621,20 @@ API integrations, and scalable message distribution.
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-social">
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <a href="https://github.com/sharma-mohit-2005" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
                         </svg>
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <a href="https://www.linkedin.com/in/sharma-mohit-dev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
                             <rect x="2" y="9" width="4" height="12"/>
                             <circle cx="4" cy="4" r="2"/>
                         </svg>
                     </a>
                     <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
                         </svg>
                     </a>
@@ -868,7 +642,7 @@ API integrations, and scalable message distribution.
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Mohit Sharma. All rights reserved.</p>
-                <p>Designed & Built with <span class="heart">♥</span></p>
+                <p>Designed & Built with <span class="heart">♥</span> using Synthetic Architect</p>
             </div>
         </div>
     </footer>
